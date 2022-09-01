@@ -1,0 +1,28 @@
+@import 'src/scss/variables';
+
+.page-container {
+  .map-card {
+    width: 750px;
+  }
+
+  .map-container {
+    padding-top: 25px;
+  }
+
+  mat-card-title,
+  mat-card-subtitle {
+    text-align: center;
+  }
+
+  mat-card-subtitle {
+    color: $warn;
+  }
+
+  mat-card-footer {
+    margin: initial;
+
+    a {
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="page-container flex flex-content-center">
+    <mat-card class="map-card">
+        <mat-card-subtitle>{{errorMsg}}</mat-card-subtitle>
+        <mat-card-content>
+            <ng-select appearance="outline" placeholder="Write and select an address" [virtualScroll]="true"
+                [items]="places$ | async" bindLabel="description" bindValue="place_id" [loading]="isLoading"
+                [typeahead]="searchTerms" (change)="onChange($event)">
+            </ng-select>
+            <div class="map-container" *ngIf="apiLoaded | async">
+                <google-map width="100%" [zoom]="zoom" [center]="center" [options]="options">
+                    <map-marker #markerElem="mapMarker" *ngFor="let marker of markers" [position]="marker.position"
+                        [label]="marker.label" [title]="marker.title" [options]="marker.options"
+                        (mapClick)="openInfo(markerElem, marker.info)">
+                    </map-marker>
+                    <map-info-window>{{ infoContent }}</map-info-window>
+                </google-map>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
