@@ -19,7 +19,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Start development in localhost
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+git clone --depth 1 https://github.com/GMezaPostigo/angular-google-maps-stores-searcher.git angular-app
+cd angular-app
+```
+
+Generate your google maps api key
+
+Update environment.ts file `googleApiKey: ''` to `googleApiKey: '{YOUR_GOOGLE_API_KEY}'`
+
+
+Start project:
+
+```bash
+npm install
+
+ng serve --open
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Test
 
